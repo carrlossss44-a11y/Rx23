@@ -262,6 +262,122 @@
       .hero { min-height: 560px; }
       .footer-inner { flex-direction: column; text-align: center; }
     }
+/* R2XR3 Mobile Optimization */
+
+html {
+  scroll-padding-top: 100px;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+
+  .container {
+    width: 92%;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 18px 0;
+  }
+
+  .logo {
+    font-size: 28px;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px 18px;
+    width: 100%;
+  }
+
+  .nav-links a {
+    font-size: 11px;
+    padding: 8px 2px;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 85px 0;
+  }
+
+  h1 {
+    font-size: clamp(38px, 10vw, 55px);
+    line-height: 1.15;
+  }
+
+  h2 {
+    font-size: clamp(30px, 8vw, 42px);
+  }
+
+  .hero p {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .button {
+    width: 100%;
+    text-align: center;
+    padding: 16px 20px;
+  }
+
+  .grid,
+  .split,
+  .process {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .service-card {
+    padding: 26px;
+  }
+
+  .feature-box {
+    padding: 35px 20px;
+  }
+
+  section {
+    padding: 65px 0;
+  }
+
+  .section-heading {
+    margin-bottom: 30px;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 380px) {
+  .nav-links {
+    gap: 6px 12px;
+  }
+
+  .eyebrow {
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+}
+
   </style>
 </head>
 <body>
