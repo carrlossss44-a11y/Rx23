@@ -1,0 +1,491 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08090b">
+  <meta name="description" content="RX32 helps businesses grow with professional websites, local SEO, Google Business Profile optimization, and lead generation.">
+  <title>RX32 | Digital Growth & Strategy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #08090b;
+      --surface: #111317;
+      --surface2: #17191d;
+      --gold: #d8b36a;
+      --gold-light: #f1d69b;
+      --white: #f6f4ef;
+      --muted: #a9a8a5;
+      --border: rgba(216,179,106,.22);
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 85px; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--white);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.65;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, input, textarea { font: inherit; }
+    button { cursor: pointer; }
+    img { max-width: 100%; }
+    .container { width: min(90%, var(--max)); margin: auto; }
+    .gold { color: var(--gold); }
+    .eyebrow {
+      color: var(--gold);
+      font-size: .76rem;
+      font-weight: 700;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3 {
+      font-family: Manrope, sans-serif;
+      line-height: 1.16;
+      letter-spacing: -.045em;
+    }
+    h1 { font-size: clamp(2.8rem, 7vw, 5.8rem); margin: 20px 0; }
+    h2 { font-size: clamp(2rem, 4vw, 3.25rem); margin: 16px 0; }
+    h3 { font-size: 1.24rem; margin: 16px 0 10px; }
+    p { color: var(--muted); }
+    section { padding: 105px 0; }
+    .section-intro { max-width: 680px; margin-bottom: 44px; }
+
+    /* Navigation */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(8,9,11,.94);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .logo {
+      font-family: Manrope, sans-serif;
+      font-size: 1.7rem;
+      font-weight: 800;
+      letter-spacing: -.09em;
+      color: var(--gold-light);
+    }
+    .logo span { font-weight: 400; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+    .nav-links a {
+      font-size: .88rem;
+      color: #dedbd4;
+      transition: color .2s;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      color: var(--gold);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px 13px;
+      font-size: 1.3rem;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 12px 25px;
+      border-radius: 5px;
+      font-size: .88rem;
+      font-weight: 700;
+      transition: transform .2s, background .2s;
+      text-align: center;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-gold { background: var(--gold); color: #111; }
+    .btn-gold:hover { background: var(--gold-light); }
+    .btn-outline {
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      background: transparent;
+    }
+    .btn-outline:hover { background: rgba(216,179,106,.08); }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      min-height: 670px;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(ellipse at 82% 35%, rgba(216,179,106,.12), transparent 42%),
+        linear-gradient(135deg,#0e1014 0%,#08090b 65%);
+    }
+    .hero:after {
+      content: "";
+      position: absolute;
+      right: -170px;
+      top: 10%;
+      width: 480px;
+      height: 480px;
+      border: 1px solid rgba(216,179,106,.15);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .hero-content { position: relative; z-index: 1; max-width: 830px; }
+    .hero p { font-size: 1.13rem; max-width: 600px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
+    .hero-line {
+      height: 2px;
+      width: 72px;
+      background: var(--gold);
+      margin-top: 34px;
+    }
+
+    /* Services */
+    .services { background: #0d0f12; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 20px;
+    }
+    .service-card {
+      background: linear-gradient(145deg,#17191d,#101216);
+      border: 1px solid var(--border);
+      padding: 34px 27px;
+      border-radius: 10px;
+      transition: transform .25s, border-color .25s;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--gold);
+    }
+    .service-icon {
+      display: grid;
+      place-items: center;
+      width: 48px;
+      height: 48px;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      color: var(--gold);
+      font-size: 1.3rem;
+    }
+    .service-card p { margin-bottom: 0; font-size: .95rem; }
+
+    /* About */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+    .about-visual {
+      min-height: 360px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background:
+        radial-gradient(circle,rgba(216,179,106,.13),transparent 65%),
+        #111317;
+    }
+    .about-visual .big-logo {
+      font-family: Manrope,sans-serif;
+      font-size: clamp(4rem,9vw,7rem);
+      color: var(--gold);
+      font-weight: 800;
+      letter-spacing: -.12em;
+    }
+    .about-visual small {
+      color: var(--muted);
+      letter-spacing: .3em;
+      font-size: .7rem;
+      text-transform: uppercase;
+    }
+    .checks { display: grid; gap: 13px; margin-top: 25px; }
+    .checks div { color: #e7e3da; }
+    .checks b { color: var(--gold); margin-right: 12px; }
+
+    /* Process */
+    .process { background: #0d0f12; }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3,minmax(0,1fr));
+      gap: 24px;
+    }
+    .step { border-top: 1px solid var(--border); padding-top: 25px; }
+    .step-number { font-size: 2.4rem; font-weight: 800; color: var(--gold); }
+    .step p { font-size: .95rem; }
+
+    /* Contact */
+    .contact {
+      text-align: center;
+      background:
+        radial-gradient(ellipse at 50% 100%,rgba(216,179,106,.09),transparent 60%),
+        #08090b;
+    }
+    .contact .container { max-width: 760px; }
+    .contact p { max-width: 570px; margin: 0 auto 28px; }
+    .contact-actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 0;
+      background: #08090b;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    footer p { font-size: .8rem; margin: 0; }
+
+    /* Tablet */
+    @media (max-width: 900px) {
+      .grid, .steps { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .about-grid { gap: 30px; }
+      .nav-links { gap: 17px; }
+    }
+
+    /* Mobile */
+    @media (max-width: 680px) {
+      section { padding: 70px 0; }
+      .nav { min-height: 66px; }
+      .menu-toggle { display: block; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 66px;
+        left: 0;
+        right: 0;
+        padding: 20px 5% 25px;
+        background: #111317;
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 13px 8px; }
+      .nav-links .btn { margin-top: 10px; }
+      .hero { min-height: 600px; padding: 75px 0; }
+      .hero h1 { font-size: clamp(2.5rem,11vw,4rem); }
+      .hero p { font-size: 1rem; }
+      .hero-actions { flex-direction: column; }
+      .hero-actions .btn { width: 100%; }
+      .grid, .steps, .about-grid { grid-template-columns: 1fr; }
+      .service-card { padding: 27px 24px; }
+      .about-visual { min-height: 270px; order: -1; }
+      .footer-inner { flex-direction: column; text-align: center; }
+      .contact-actions { flex-direction: column; }
+      .contact-actions .btn { width: 100%; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *:before, *:after { transition: none !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="#home" class="logo" aria-label="RX32 home">RX<span>32</span></a>
+
+      <button class="menu-toggle" id="menuToggle"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="navLinks">&#9776;</button>
+
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#process">Our Process</a>
+        <a href="#contact" class="btn btn-gold">Get Started</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+          <div class="eyebrow">Digital Growth & Strategy</div>
+          <h1>Your Business.<br>Your Vision.<br><span class="gold">Our Strategy.</span></h1>
+          <p>We help ambitious businesses establish a powerful online presence, reach more customers, and create opportunities for lasting growth.</p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-gold">Start Your Project &rarr;</a>
+            <a href="#services" class="btn btn-outline">Explore Our Services</a>
+          </div>
+          <div class="hero-line"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="container">
+        <div class="section-intro">
+          <div class="eyebrow">What We Do</div>
+          <h2>Digital Solutions.<br><span class="gold">Measurable Ambition.</span></h2>
+          <p>Professional digital services designed to help local businesses build credibility and attract customers.</p>
+        </div>
+
+        <div class="grid">
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">&#9671;</div>
+            <h3>Website Design</h3>
+            <p>Modern, fast, mobile-friendly websites built to represent your brand and turn visitors into inquiries.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">&#8981;</div>
+            <h3>Search Engine Optimization</h3>
+            <p>Improve your website's search visibility through strong technical foundations and relevant content.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">&#9678;</div>
+            <h3>Google Business Profile</h3>
+            <p>Optimize your local business presence to help nearby customers find accurate information about you.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">&#8599;</div>
+            <h3>Lead Generation</h3>
+            <p>Develop clearer paths from online discovery to calls, contact forms, and customer inquiries.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">&#9881;</div>
+            <h3>Website Maintenance</h3>
+            <p>Ongoing updates, content changes, and site support to help keep your business online and current.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon" aria-hidden="true">&#9733;</div>
+            <h3>Digital Strategy</h3>
+            <p>Practical marketing guidance aligned with your business goals, audience, and budget.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container about-grid">
+        <div>
+          <div class="eyebrow">About RX32</div>
+          <h2>Built on Ambition.<br><span class="gold">Driven by Purpose.</span></h2>
+          <p>RX32 is an emerging digital services business focused on helping small businesses strengthen their online presence.</p>
+          <p>We believe professional websites and effective digital marketing should be accessible to businesses that are ready to grow.</p>
+          <div class="checks">
+            <div><b>&#10003;</b> Professional, responsive design</div>
+            <div><b>&#10003;</b> Clear communication</div>
+            <div><b>&#10003;</b> Solutions tailored to your goals</div>
+            <div><b>&#10003;</b> Long-term business relationships</div>
+          </div>
+        </div>
+        <div class="about-visual" aria-label="RX32 brand graphic">
+          <div class="big-logo">RX32</div>
+          <small>Growth through strategy</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="process" id="process">
+      <div class="container">
+        <div class="section-intro">
+          <div class="eyebrow">How We Work</div>
+          <h2>A Clear Path <span class="gold">Forward.</span></h2>
+          <p>From the first conversation to launch and beyond, we focus on understanding your business.</p>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">01</div>
+            <h3>Discover</h3>
+            <p>We learn about your business, customers, goals, and current digital presence.</p>
+          </div>
+          <div class="step">
+            <div class="step-number">02</div>
+            <h3>Build</h3>
+            <p>We develop a digital solution suited to your brand and objectives.</p>
+          </div>
+          <div class="step">
+            <div class="step-number">03</div>
+            <h3>Grow</h3>
+            <p>We launch, review opportunities, and discuss ongoing support as needed.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="eyebrow">Let's Work Together</div>
+        <h2>Ready to Build<br><span class="gold">Something Greater?</span></h2>
+        <p>Whether you're launching your first website or improving your digital presence, we'd love to hear about your project.</p>
+        <div class="contact-actions">
+          <!-- Replace this email address before publishing -->
+          <a class="btn btn-gold" href="mailto:YOUR-EMAIL@example.com?subject=RX32%20Project%20Inquiry">Request a Consultation</a>
+          <a class="btn btn-outline" href="#services">View Our Services</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <a href="#home" class="logo">RX<span>32</span></a>
+      <p>&copy; <span id="year"></span> RX32. All rights reserved.</p>
+      <p>Digital Growth &amp; Strategy</p>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById("menuToggle");
+    const links = document.getElementById("navLinks");
+
+    toggle.addEventListener("click", () => {
+      const open = links.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", String(open));
+      toggle.setAttribute(
+        "aria-label",
+        open ? "Close navigation menu" : "Open navigation menu"
+      );
+      toggle.innerHTML = open ? "&times;" : "&#9776;";
+    });
+
+    links.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        links.classList.remove("open");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Open navigation menu");
+        toggle.innerHTML = "&#9776;";
+      });
+    });
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+</body>
+</html>
